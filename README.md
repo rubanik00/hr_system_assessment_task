@@ -59,6 +59,13 @@ To run tests for the smart contract:
 $ forge test
 ```
 
+#### Coverage
+
+| File                  | % Lines        | % Statements   | % Branches     | % Funcs       |
+| --------------------- | -------------- | -------------- | -------------- | ------------- |
+| src/HiringProcess.sol | 91.89% (34/37) | 91.67% (33/36) | 72.22% (13/18) | 100.00% (6/6) |
+| Total                 | 91.89% (34/37) | 91.67% (33/36) | 72.22% (13/18) | 100.00% (6/6) |
+
 ### Formatting
 
 To format the smart contract code:
