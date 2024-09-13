@@ -64,8 +64,8 @@ contract HiringProcessTest is Test {
         hiringProcessContract.updateTechnicalInterview(candidate1, true);
 
         vm.prank(manager);
-        (HiringProcessTypes.Status tech, , , , ) = hiringProcessContract.getCandidateStatus(candidate1);
-        assertEq(uint(tech), uint(HiringProcessTypes.Status.PASSED));
+        (HiringProcessTypes.Status tech,,,,) = hiringProcessContract.getCandidateStatus(candidate1);
+        assertEq(uint256(tech), uint256(HiringProcessTypes.Status.PASSED));
     }
 
     // Test error when non-technical interviewer tries to update technical interview
@@ -80,8 +80,8 @@ contract HiringProcessTest is Test {
         hiringProcessContract.updateDesignInterview(candidate1, true);
 
         vm.prank(manager);
-        (, HiringProcessTypes.Status design, , , ) = hiringProcessContract.getCandidateStatus(candidate1);
-        assertEq(uint(design), uint(HiringProcessTypes.Status.PASSED));
+        (, HiringProcessTypes.Status design,,,) = hiringProcessContract.getCandidateStatus(candidate1);
+        assertEq(uint256(design), uint256(HiringProcessTypes.Status.PASSED));
     }
 
     // Test error when unauthorized user updates design interview
@@ -96,8 +96,8 @@ contract HiringProcessTest is Test {
         hiringProcessContract.updateCodingInterview(candidate1, true);
 
         vm.prank(manager);
-        (, , HiringProcessTypes.Status coding, , ) = hiringProcessContract.getCandidateStatus(candidate1);
-        assertEq(uint(coding), uint(HiringProcessTypes.Status.PASSED));
+        (,, HiringProcessTypes.Status coding,,) = hiringProcessContract.getCandidateStatus(candidate1);
+        assertEq(uint256(coding), uint256(HiringProcessTypes.Status.PASSED));
     }
 
     // Test error when unauthorized user updates coding interview
@@ -111,8 +111,8 @@ contract HiringProcessTest is Test {
         vm.startPrank(hr1);
         hiringProcessContract.updateHrInterview(candidate1, true);
 
-        (, , , HiringProcessTypes.Status hr, ) = hiringProcessContract.getCandidateStatus(candidate1);
-        assertEq(uint(hr), uint(HiringProcessTypes.Status.PASSED));
+        (,,, HiringProcessTypes.Status hr,) = hiringProcessContract.getCandidateStatus(candidate1);
+        assertEq(uint256(hr), uint256(HiringProcessTypes.Status.PASSED));
         vm.stopPrank();
     }
 
@@ -136,8 +136,8 @@ contract HiringProcessTest is Test {
         vm.startPrank(hr1);
         hiringProcessContract.updateHrInterview(candidate1, true);
 
-        (, , , , HiringProcessTypes.Status verified) = hiringProcessContract.getCandidateStatus(candidate1);
-        assertEq(uint(verified), uint(HiringProcessTypes.Status.PASSED));
+        (,,,, HiringProcessTypes.Status verified) = hiringProcessContract.getCandidateStatus(candidate1);
+        assertEq(uint256(verified), uint256(HiringProcessTypes.Status.PASSED));
         vm.stopPrank();
     }
 
@@ -156,8 +156,8 @@ contract HiringProcessTest is Test {
         vm.startPrank(hr1);
         hiringProcessContract.updateHrInterview(candidate1, true);
 
-        (, , , , HiringProcessTypes.Status verified) = hiringProcessContract.getCandidateStatus(candidate1);
-        assertEq(uint(verified), uint(HiringProcessTypes.Status.PENDING));
+        (,,,, HiringProcessTypes.Status verified) = hiringProcessContract.getCandidateStatus(candidate1);
+        assertEq(uint256(verified), uint256(HiringProcessTypes.Status.PENDING));
         vm.stopPrank();
     }
 
