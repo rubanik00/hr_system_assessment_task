@@ -116,6 +116,10 @@ $ anvil --help
 $ cast --help
 ```
 
+## Task
+
+[Solidity Assignment](Solidity_Assignment.pdf)
+
 ## Documentation
 
 For more information about Foundry, check out the official documentation:
@@ -125,3 +129,7 @@ For more information about Foundry, check out the official documentation:
 ## License
 
 This project is licensed under the GNUv3.0 License. See the [LICENSE](LICENSE) file for details.
+
+## Contributors
+
+[rubanik00](https://github.com/rubanik00)
